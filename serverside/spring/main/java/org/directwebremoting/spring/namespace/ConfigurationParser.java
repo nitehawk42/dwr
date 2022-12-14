@@ -37,7 +37,6 @@ public final class ConfigurationParser implements BeanDefinitionParser
      * @param handler a non null instance
      */
     public ConfigurationParser(NamespaceHandlerSupport handler) {
-        Assert.notNull(handler);
         this.handler = handler;
     }
 

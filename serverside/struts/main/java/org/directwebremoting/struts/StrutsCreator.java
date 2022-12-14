@@ -2,8 +2,8 @@ package org.directwebremoting.struts;
 
 import java.lang.reflect.Method;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.config.ModuleConfig;
@@ -94,7 +94,7 @@ public class StrutsCreator extends AbstractCreator implements Creator
                         request = FakeHttpServletRequestFactory.create();
                     }
 
-                    moduleConfig = RequestUtils.getModuleConfig(request, wc.getServletContext());
+                    //moduleConfig = RequestUtils.getModuleConfig(request, wc.getServletContext());
                 }
             }
         }

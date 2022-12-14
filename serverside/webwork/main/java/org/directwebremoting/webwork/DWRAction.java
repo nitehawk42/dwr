@@ -3,10 +3,10 @@ package org.directwebremoting.webwork;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -42,8 +42,8 @@ public class DWRAction
      */
     private DWRAction(ServletContext servletContext) throws ServletException
     {
-        DispatcherUtils.initialize(servletContext);
-        wwDispatcher = DispatcherUtils.getInstance();
+        //DispatcherUtils.initialize(servletContext);
+        //wwDispatcher = DispatcherUtils.getInstance();
         actionProcessor = loadActionProcessor(servletContext.getInitParameter(DWRACTIONPROCESSOR_INIT_PARAM));
     }
 
@@ -61,7 +61,7 @@ public class DWRAction
 
         wwDispatcher.prepare(request, actionResponse);
 
-        ActionInvocation invocation = invokeAction(wwDispatcher, request, actionResponse, servletContext, actionDefinition, params);
+        //ActionInvocation invocation = invokeAction(wwDispatcher, request, actionResponse, servletContext, actionDefinition, params);
 
         AjaxResult result;
         if (actionDefinition.isExecuteResult())
@@ -71,7 +71,7 @@ public class DWRAction
         }
         else
         {
-            result = new DefaultAjaxDataResult(invocation.getAction());
+            //result = new DefaultAjaxDataResult(invocation.getAction());
         }
 
         if (null != actionProcessor)
